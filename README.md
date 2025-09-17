@@ -2,6 +2,37 @@
 
 This repository contains a custom job scraper built using **Scrapy** to extract structured job listings from companies hosted on the **Ashby** job platform. It parses open positions, extracts structured job metadata, and pushes the cleaned data to MongoDB.
 
+## 📸 Screenshots
+
+<div align="center">
+  <h3>Project Overview & Results</h3>
+</div>
+
+<div align="center">
+  <img src="images/images (0).png" alt="Screenshot 1" width="80%" style="margin: 10px;">
+  <br><em>Project Overview</em>
+</div>
+
+<div align="center">
+  <img src="images/images (1).png" alt="Screenshot 2" width="80%" style="margin: 10px;">
+  <br><em>Scraping Process</em>
+</div>
+
+<div align="center">
+  <img src="images/images (2).png" alt="Screenshot 3" width="80%" style="margin: 10px;">
+  <br><em>Data Processing</em>
+</div>
+
+<div align="center">
+  <img src="images/images (4).png" alt="Screenshot 4" width="80%" style="margin: 10px;">
+  <br><em>Results & Output</em>
+</div>
+
+<div align="center">
+  <img src="images/images (5).png" alt="Screenshot 5" width="80%" style="margin: 10px;">
+  <br><em>Final Results</em>
+</div>
+
 ---
 
 ## 🔍 Features
@@ -19,6 +50,7 @@ This repository contains a custom job scraper built using **Scrapy** to extract 
 ---
 
 ## 📂 Project Structure
+
 ```
 ├── Ashby_companies_test.csv      # Input file with list of Ashby company job URLs
 ├── spiders/
@@ -29,6 +61,7 @@ This repository contains a custom job scraper built using **Scrapy** to extract 
 ├── push_mongo.py                 # MongoDB interaction functions
 ├── Scraping_log.log              # Log file for scrape results
 ```
+
 ---
 
 ## 🧠 Tech Stack
@@ -52,36 +85,34 @@ companies
 https://jobs.ashbyhq.com/acme
 https://jobs.ashbyhq.com/foobar
 
-
 ---
 
 ## 🚀 How to Run
 
 1. **Install dependencies:**
-bash
-pip install -r requirements.txt
-
+   bash
+   pip install -r requirements.txt
 
 2. **Place your company URLs in Ashby_companies_test.csv.**
 
 3. **Run the Scrapy spider:**
-bash
-scrapy crawl get_jobs
-
+   bash
+   scrapy crawl get_jobs
 
 4. **Check the log for how many new jobs were scraped:**
-Scraping_log.log
-
+   Scraping_log.log
 
 ---
 
 ## ✅ Output
 
 Each valid job posting is pushed to MongoDB using:
+
 - push(final_job_object)
 - verify_job_format() ensures data structure consistency
 
 The job object includes:
+
 - job – Main job info
 - requirements – Required form fields
 - company – Company metadata
